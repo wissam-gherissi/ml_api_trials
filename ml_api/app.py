@@ -48,7 +48,7 @@ CANDIDATE_LABELS = ["job application", "spam", "inquiry", "networking"]
 async def health_check():
     if not model_loaded:
         raise HTTPException(status_code=500, detail="Model failed to load")
-    return {"status": "alive", "model": MODEL_NAME}
+    return {"status": "alive", "model_loaded": model_loaded}
 
 @app.post("/predict", response_model=PredictionOutput)
 async def predict(payload: RecruitmentInput):
