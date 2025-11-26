@@ -14,6 +14,9 @@ jobs:
   # JOB 1: Continuous Integration (Test)
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./ml_api
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -25,6 +28,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
+          pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run Tests
