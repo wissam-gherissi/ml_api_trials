@@ -9,6 +9,7 @@ env:
   REGION: europe-west1
   REPO_NAME: ml_api_trials
   IMAGE_NAME: recruitment-api
+  
 
 jobs:
   # JOB 1: Continuous Integration (Test)
