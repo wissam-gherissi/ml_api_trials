@@ -38,6 +38,9 @@ jobs:
   deploy:
     needs: test # Only run if 'test' passes!
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./ml_api
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
